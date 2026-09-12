@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/%D0%A0%D0%A1/Desktop/index.html -->
-<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поздравительная Открытка ✨</title>
-    <!-- Подключаем красивый шрифт и иконки FontAwesome -->
-    <link href="./Поздравительная Открытка ✨_files/css2" rel="stylesheet">
-    <link rel="stylesheet" href="./Поздравительная Открытка ✨_files/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         * {
@@ -26,7 +25,6 @@
             perspective: 2000px;
         }
 
-        /* Анимированные блестки на заднем фоне */
         .bg-sparkles {
             position: fixed;
             top: 0;
@@ -50,7 +48,6 @@
             100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
         }
 
-        /* Контейнер Книжки */
         .book-container {
             position: relative;
             width: 380px;
@@ -61,7 +58,6 @@
             z-index: 10;
         }
 
-        /* Базовый стиль Страницы */
         .page {
             position: absolute;
             width: 100%;
@@ -71,14 +67,14 @@
             border-radius: 20px;
             background: #fff;
             transform-origin: left center;
-            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5s ease 0.6s;
             box-shadow: inset 0 0 30px rgba(0,0,0,0.03);
             overflow: hidden;
             border: 1px solid rgba(255, 215, 0, 0.3);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        /* Обложка */
         .cover {
             background: linear-gradient(145deg, #fff5f7, #ffe3ec);
             display: flex;
@@ -105,7 +101,6 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
 
-        /* Сердечко-Кнопка с Искривлением и Свечением */
         .heart-btn-wrapper {
             position: relative;
             display: flex;
@@ -137,7 +132,6 @@
             transform: scale(1.1);
         }
 
-        /* Волны от сердечка */
         .heart-btn::before, .heart-btn::after {
             content: '';
             position: absolute;
@@ -184,7 +178,6 @@
             50% { transform: scale(1.4) rotate(180deg); opacity: 1; }
         }
 
-        /* Наполнение Внутренних Страниц */
         .page-content {
             width: 100%;
             height: 100%;
@@ -202,7 +195,6 @@
         .page-3 { background: linear-gradient(to bottom, #ffffff, #fcf0ff); }
         .page-4 { background: linear-gradient(to bottom, #ffffff, #fff3e6); }
 
-        /* Рамка для Фотографий */
         .photo-frame {
             width: 100%;
             height: 220px;
@@ -221,7 +213,6 @@
             object-fit: cover;
         }
 
-        /* Декоративные Значки по Углам */
         .decor-icon {
             position: absolute;
             font-size: 1.8rem;
@@ -232,7 +223,6 @@
         .top-left { top: 15px; left: 15px; }
         .top-right { top: 15px; right: 15px; }
 
-        /* Текст на Страницах */
         .card-text {
             font-family: 'Caveat', cursive;
             font-size: 2rem;
@@ -247,7 +237,6 @@
         .page-3 .card-text { color: #8e24aa; }
         .page-4 .card-text { color: #e65100; }
 
-        /* Кнопки Навигации */
         .next-btn {
             align-self: flex-end;
             background: linear-gradient(135deg, #ff758c, #ff7eb3);
@@ -270,12 +259,12 @@
             box-shadow: 0 6px 16px rgba(255, 117, 140, 0.6);
         }
 
-        /* Классы Поворота Страниц */
         .flipped {
             transform: rotateY(-180deg);
+            opacity: 0;
+            pointer-events: none;
         }
 
-        /* Порядок слоев */
         .page-1-z { z-index: 4; }
         .page-2-z { z-index: 3; }
         .page-3-z { z-index: 2; }
@@ -285,10 +274,8 @@
 </head>
 <body>
 
-    <!-- Фоновые мерцающие частицы -->
-    <div class="bg-sparkles" id="sparkleBg"><div class="bg-sparkle" style="width: 6.79785px; height: 6.79785px; left: 36.3153vw; animation-delay: 3.27602s; animation-duration: 5.42336s;"></div><div class="bg-sparkle" style="width: 6.5159px; height: 6.5159px; left: 32.7503vw; animation-delay: 5.7258s; animation-duration: 8.28287s;"></div><div class="bg-sparkle" style="width: 6.95835px; height: 6.95835px; left: 61.0843vw; animation-delay: 2.85367s; animation-duration: 6.16843s;"></div><div class="bg-sparkle" style="width: 9.71327px; height: 9.71327px; left: 80.5393vw; animation-delay: 0.622175s; animation-duration: 5.1751s;"></div><div class="bg-sparkle" style="width: 9.99546px; height: 9.99546px; left: 9.6123vw; animation-delay: 7.20154s; animation-duration: 8.51753s;"></div><div class="bg-sparkle" style="width: 8.5465px; height: 8.5465px; left: 72.0174vw; animation-delay: 0.250223s; animation-duration: 8.19457s;"></div><div class="bg-sparkle" style="width: 4.98487px; height: 4.98487px; left: 61.9167vw; animation-delay: 1.70275s; animation-duration: 6.51322s;"></div><div class="bg-sparkle" style="width: 11.6371px; height: 11.6371px; left: 84.0001vw; animation-delay: 7.20122s; animation-duration: 8.64417s;"></div><div class="bg-sparkle" style="width: 4.17227px; height: 4.17227px; left: 33.5267vw; animation-delay: 1.8514s; animation-duration: 6.31254s;"></div><div class="bg-sparkle" style="width: 5.41843px; height: 5.41843px; left: 60.8652vw; animation-delay: 4.89136s; animation-duration: 7.2575s;"></div><div class="bg-sparkle" style="width: 10.5765px; height: 10.5765px; left: 55.4711vw; animation-delay: 6.04305s; animation-duration: 8.66008s;"></div><div class="bg-sparkle" style="width: 11.7585px; height: 11.7585px; left: 82.8782vw; animation-delay: 6.14469s; animation-duration: 9.05813s;"></div><div class="bg-sparkle" style="width: 8.26531px; height: 8.26531px; left: 92.9038vw; animation-delay: 3.33394s; animation-duration: 8.49121s;"></div><div class="bg-sparkle" style="width: 11.2291px; height: 11.2291px; left: 38.875vw; animation-delay: 1.21627s; animation-duration: 5.82786s;"></div><div class="bg-sparkle" style="width: 11.1636px; height: 11.1636px; left: 50.9466vw; animation-delay: 0.440859s; animation-duration: 6.14449s;"></div><div class="bg-sparkle" style="width: 7.80332px; height: 7.80332px; left: 76.6104vw; animation-delay: 4.91222s; animation-duration: 7.37746s;"></div><div class="bg-sparkle" style="width: 11.397px; height: 11.397px; left: 16.0526vw; animation-delay: 4.25978s; animation-duration: 7.02735s;"></div><div class="bg-sparkle" style="width: 10.564px; height: 10.564px; left: 50.4596vw; animation-delay: 5.37349s; animation-duration: 7.56007s;"></div><div class="bg-sparkle" style="width: 9.03863px; height: 9.03863px; left: 55.0473vw; animation-delay: 0.0438872s; animation-duration: 8.53881s;"></div><div class="bg-sparkle" style="width: 6.88529px; height: 6.88529px; left: 72.6023vw; animation-delay: 1.80642s; animation-duration: 9.03944s;"></div><div class="bg-sparkle" style="width: 5.17538px; height: 5.17538px; left: 3.08243vw; animation-delay: 4.03729s; animation-duration: 8.19717s;"></div><div class="bg-sparkle" style="width: 6.69264px; height: 6.69264px; left: 83.4833vw; animation-delay: 1.30959s; animation-duration: 7.38378s;"></div><div class="bg-sparkle" style="width: 4.21058px; height: 4.21058px; left: 32.3854vw; animation-delay: 5.16251s; animation-duration: 7.83287s;"></div><div class="bg-sparkle" style="width: 4.94373px; height: 4.94373px; left: 37.6216vw; animation-delay: 2.44895s; animation-duration: 5.15252s;"></div><div class="bg-sparkle" style="width: 9.09841px; height: 9.09841px; left: 59.0976vw; animation-delay: 0.468885s; animation-duration: 9.60027s;"></div><div class="bg-sparkle" style="width: 7.62302px; height: 7.62302px; left: 87.8913vw; animation-delay: 2.36138s; animation-duration: 7.97369s;"></div><div class="bg-sparkle" style="width: 6.47899px; height: 6.47899px; left: 2.49987vw; animation-delay: 4.06727s; animation-duration: 5.43688s;"></div><div class="bg-sparkle" style="width: 11.4777px; height: 11.4777px; left: 12.6846vw; animation-delay: 2.85127s; animation-duration: 9.43415s;"></div><div class="bg-sparkle" style="width: 6.58759px; height: 6.58759px; left: 48.8783vw; animation-delay: 2.19482s; animation-duration: 8.73359s;"></div><div class="bg-sparkle" style="width: 5.6175px; height: 5.6175px; left: 4.26272vw; animation-delay: 0.0734552s; animation-duration: 8.28153s;"></div><div class="bg-sparkle" style="width: 10.0593px; height: 10.0593px; left: 68.1296vw; animation-delay: 0.114717s; animation-duration: 8.63762s;"></div><div class="bg-sparkle" style="width: 8.18639px; height: 8.18639px; left: 26.9925vw; animation-delay: 6.11104s; animation-duration: 9.45809s;"></div><div class="bg-sparkle" style="width: 9.25762px; height: 9.25762px; left: 85.6498vw; animation-delay: 3.69058s; animation-duration: 7.6881s;"></div><div class="bg-sparkle" style="width: 9.24409px; height: 9.24409px; left: 45.7634vw; animation-delay: 0.286791s; animation-duration: 5.37012s;"></div><div class="bg-sparkle" style="width: 8.29513px; height: 8.29513px; left: 5.30933vw; animation-delay: 0.799719s; animation-duration: 5.93026s;"></div></div>
+    <div class="bg-sparkles" id="sparkleBg"></div>
 
-    <!-- Книга Поздравлений -->
     <div class="book-container">
 
         <!-- ОБЛОЖКА -->
@@ -327,18 +314,16 @@
         <!-- СТРАНИЦА 1 -->
         <div class="page page-2-z" id="page1">
             <div class="page-content page-1">
-                <!-- Украшение: Букетики -->
                 <div class="decor-icon top-left" style="color: #ff758c;"><i class="fas fa-spa"></i></div>
                 <div class="decor-icon top-right" style="color: #ff758c;"><i class="fas fa-heart"></i></div>
 
                 <div class="photo-frame">
-                    <!-- Замените "src" на ссылку к вашему фото -->
-                    <img src="file:///C:/Users/%D0%A0%D0%A1/Desktop/photo1.jpg" alt="Фото 1">
+                    <img src="photo1.jpg" alt="Фото 1">
                 </div>
 
                 <p class="card-text">"Я тебя люблю и ты у меня самая лучшая!"</p>
 
-                <button class="next-btn" onclick="nextPage(&#39;page1&#39;)">
+                <button class="next-btn" onclick="nextPage('page1')">
                     Дальше <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -347,18 +332,16 @@
         <!-- СТРАНИЦА 2 -->
         <div class="page page-3-z" id="page2">
             <div class="page-content page-2">
-                <!-- Украшение: Единорожка / Магия -->
                 <div class="decor-icon top-left" style="color: #ba68c8;"><i class="fas fa-horse-head"></i></div>
                 <div class="decor-icon top-right" style="color: #ba68c8;"><i class="fas fa-magic"></i></div>
 
                 <div class="photo-frame">
-                    <!-- Замените "src" на ссылку к вашему фото -->
-                    <img src="file:///C:/Users/%D0%A0%D0%A1/Desktop/photo2.jpg" alt="Фото 2">
+                    <img src="photo2.jpg" alt="Фото 2">
                 </div>
 
                 <p class="card-text">"Ты молодец, очень большая, и я очень тобой горжусь!"</p>
 
-                <button class="next-btn" onclick="nextPage(&#39;page2&#39;)">
+                <button class="next-btn" onclick="nextPage('page2')">
                     Дальше <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -367,18 +350,16 @@
         <!-- СТРАНИЦА 3 -->
         <div class="page page-4-z" id="page3">
             <div class="page-content page-3">
-                <!-- Украшение: Улыбка и Солнышко -->
                 <div class="decor-icon top-left" style="color: #ffb74d;"><i class="fas fa-smile-beam"></i></div>
                 <div class="decor-icon top-right" style="color: #ffb74d;"><i class="fas fa-sun"></i></div>
 
                 <div class="photo-frame">
-                    <!-- Замените "src" на ссылку к вашему фото -->
-                    <img src="file:///C:/Users/%D0%A0%D0%A1/Desktop/photo3.jpg" alt="Фото 3">
+                    <img src="photo3.jpg" alt="Фото 3">
                 </div>
 
                 <p class="card-text">"Ты самая лучшая и почаще улыбайся, тебе это очень идет!"</p>
 
-                <button class="next-btn" onclick="nextPage(&#39;page3&#39;)">
+                <button class="next-btn" onclick="nextPage('page3')">
                     Дальше <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -387,13 +368,11 @@
         <!-- СТРАНИЦА 4 -->
         <div class="page" id="page4">
             <div class="page-content page-4">
-                <!-- Украшение: Сердечки и Искры -->
                 <div class="decor-icon top-left" style="color: #ff6b6b;"><i class="fas fa-heart-circle-check"></i></div>
                 <div class="decor-icon top-right" style="color: #ff6b6b;"><i class="fas fa-sparkles"></i></div>
 
                 <div class="photo-frame">
-                    <!-- Замените "src" на ссылку к вашему фото -->
-                    <img src="file:///C:/Users/%D0%A0%D0%A1/Desktop/photo4.jpg" alt="Фото 4">
+                    <img src="photo4.jpg" alt="Фото 4">
                 </div>
 
                 <p class="card-text">"У нас все будет хорошо, люблю тебя, малюк мой!" ❤️</p>
@@ -407,7 +386,6 @@
     </div>
 
     <script>
-        // Генерация мерцающих частичек на фоне
         const sparkleBg = document.getElementById('sparkleBg');
         for (let i = 0; i < 35; i++) {
             const sparkle = document.createElement('div');
@@ -421,17 +399,14 @@
             sparkleBg.appendChild(sparkle);
         }
 
-        // Перелистывание обложки при клике на сердечко
         document.getElementById('openBtn').addEventListener('click', function() {
             document.getElementById('cover').classList.add('flipped');
         });
 
-        // Переход к следующей странице
         function nextPage(pageId) {
             document.getElementById(pageId).classList.add('flipped');
         }
 
-        // Вернуться в начало (закрыть книжку)
         function restartBook() {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => {
@@ -439,5 +414,5 @@
             });
         }
     </script>
-
-</body></html>
+</body>
+</html>
